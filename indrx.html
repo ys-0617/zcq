@@ -3,287 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>祝 左超情 生日快乐 | 7月27日</title>
+    <title>墨雨 | 冒险家</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "微软雅黑", sans-serif;
+            font-family: "Microsoft Yahei", sans-serif;
         }
-     /* 主体容器 */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 5%;
-        }
-        /* 全局天蓝色渐变背景 */
+
         body {
-            background: linear-gradient(120deg, #87CEFA, #ADD8E6, #B0E0E6);
-            min-height: 100vh;
-            color: #222;
+            background-color: #f7faf8;
+            color: #2c4a3b;
+            line-height: 1.7;
         }
 
-        /* 顶部导航栏 固定悬浮 */
-        .nav {
-            position: fixed;
-            top: 0;
+        /* 顶部横幅 */
+        .banner {
             width: 100%;
-            background: rgba(255, 244, 244, 0.542);
-            backdrop-filter: blur(8px);
-            padding: 15px 0;
-            text-align: center;
-            z-index: 999;
+            height: 380px;
+            background: url("img/banner.jpg") center/cover no-repeat;
+            position: relative;
         }
-
-        .nav a {
-            color: #0066CC;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            margin: 0 18px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        .nav a:hover {
-            background: #0066CC;
-            color: #fff;
-        }
-         /* 主体容器 */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 95%;
-        }
-
-        /* 顶部顶置风景大图 */
-        .top-banner {
-            width: 100%;
-            height: 60vh;
-            margin-top: 0px;
-            overflow: hidden;
-        }
-
-        .top-banner img {
+        .banner-mask {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background: rgb(64, 101, 103);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .banner h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
+        .banner p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
 
-        /* 头部生日标题信息 */
-        .title-box {
-            text-align: center;
-            padding: 40px 20px;
+        /* 主体容器 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
 
-        .title-box h1 {
-            font-size: 42px;
-            color: #0055AA;
+        /* 简介区域 */
+        .intro {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .intro-img img {
+            width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(71, 117, 121, 0.2);
+        }
+        .intro-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #3a6b54;
+            font-weight: 500;
+        }
+        .intro-text p {
+            font-size: 1rem;
             margin-bottom: 12px;
         }
 
-        .title-box p {
-            font-size: 20px;
-            color: #1177BB;
-            line-height: 1.8;
+        /* 档案板块 */
+        .info-box {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
         }
-
-        /* 通用区块样式（锚点区块） */
-        .section {
-           
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 30px;
-            background: rgba(255,255,255,0.4);
-            border-radius: 16px;
-        }
-
-        .section h2 {
-            color: #0055AA;
-            font-size: 26px;
+        .info-box h2 {
+            font-size: 1.6rem;
+            color: #3a6b54;
             margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2ebe6;
+        }
+        .info-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .info-item {
+            font-size: 1rem;
+        }
+
+        /* 设定 */
+        .words {
             text-align: center;
         }
-
-        /* 图片展示区 多图布局 */
-        .img-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+        .words h2 {
+            font-size: 1.6rem;
+            color: #3a6b54;
+            margin-bottom: 30px;
         }
-
-        .img-list img {
-            width: 280px;
-            height: 220px;
-            border-radius: 10px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,80,150,0.25);
-            transition: 0.3s;
-        }
-
-        .img-list img:hover {
-            transform: scale(1.05);
-        }
-
-        /* 发送人 */
-            .signature {
-          text-align: right;  /* 靠右，书信效果 */
-          margin-top: 20px;
-            }
-
-        /* 祝福文案区域 */
-        .wish-box {
-            line-height: 2;
-            font-size: 17px;
-            color: #222;
-        }
-
-        .wish-item {
-            background: rgba(255,255,255,0.5);
-            padding: 18px;
-            border-radius: 10px;
+        .sentence {
+            font-size: 1.05rem;
+            padding: 16px;
             margin: 15px 0;
+            background: #edf4f0;
+            border-radius: 6px;
         }
 
-        /* 音乐播放器区域 */
-        .audio-box {
-            text-align: center;
-        }
-
-        audio {
-            width: 320px;
-            height: 45px;
-        }
-
-        /* 底部版权 */
-        .footer {
+        /* 页脚 */
+        footer {
             text-align: center;
             padding: 30px;
-            color: hsl(208, 81%, 40%);
-            font-size: 15px;
-            background-color: #009dff00;
+            color: #668072;
+            font-size: 0.9rem;
         }
 
-        /* 移动端适配 */
-        @media (max-width: 768px) {
-            .nav a {
-                margin: 0 8px;
-                font-size: 10px;
-            }
-            .title-box h1 {
-                font-size: 30px;
-            }
-            .top-banner {
-                height: 40vh;
-            }
-            .img-list img {
-                width: 90%;
-                height: auto;
-            }
 
+        /* 手机适配 */
+        @media (max-width: 700px) {
+            .intro {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info-list {
+                grid-template-columns: 1fr;
+            }
+            .banner h1 {
+                font-size: 2rem;
+            }
+                .banner p {
+                font-size: 12px;
+            }
         }
+    
     </style>
 </head>
 <body>
-    <!-- 顶部导航栏 - 锚点跳转 -->
-    <div class="nav">
-        <a href="#banner">封面</a>
-        <a href="#pic1">图集一</a>
-        <a href="#pic2">图集二</a>
-        <a href="#wish">生日祝福</a>
-        <a href="#music">生日快乐歌</a>
-    </div>
-
-    <!-- 顶置全景风景图 锚点：banner -->
-    <div class="top-banner" id="banner">
-        <!-- 替换此处src为你自己的风景大图链接/本地图片路径 -->
-        <img src="https://pic1.imgdb.cn/item/6a2ed6f8f9d8b058002c0e0e.jpg" alt="风景大图">
-    </div>
-
-    <!-- 生日主标题 -->
-    <div class="title-box">
-        <h1>🎂 祝 左超情 生日快乐 🎂</h1>
-        <p>生辰：7月27日 &nbsp; | &nbsp; 年龄：31岁</p>
-        <p>岁岁年年，平安喜乐，万事顺意</p>
-    </div>
-
-    <!-- 图片专区1 锚点：pic1 -->
-    <div class="section" id="pic1">
-        <h2>美好瞬间 · 图集一</h2>
-        <div class="img-list">
-            <!-- 自行替换下方所有img的src为你的图片链接 -->
-            <img src="https://picsum.photos/600/480?random=1" alt="生日配图">
-            <img src="https://picsum.photos/600/480?random=2" alt="生日配图">
-            <img src="https://picsum.photos/600/480?random=3" alt="生日配图">
-            <img src="https://picsum.photos/600/480?random=4" alt="生日配图">
+    <!-- 顶部横幅 -->
+    <div class="banner">
+        <div class="banner-mask">
+            <h1 style="font-weight: bold;">墨雨</h1>
+            <p>自由的冒险家 | 醉欢弥新</p>
         </div>
     </div>
 
-    <!-- 图片专区2 锚点：pic2 -->
-    <div class="section" id="pic2">
-        <h2>美好瞬间 · 图集二</h2>
-        <div class="img-list">
-            <img src="https://picsum.photos/600/480?random=5" alt="生日配图">
-            <img src="https://picsum.photos/600/480?random=6" alt="生日配图">
-            <img src="https://picsum.photos/600/480?random=7" alt="生日配图">
-            <img src="https://picsum.photos/600/480?random=8" alt="生日配图">
-        </div>
+    <!-- 主体内容 -->
+    <div class="container">
+        <!-- 角色简介 -->
+        <section class="intro">
+            <div class="intro-img">
+        <img src="https://pic1.imgdb.cn/item/6a30bffbfdc5e0ecc377698c.png" alt="摸鱼">
+            </div>
+            <div class="intro-text">
+                <h2>人物简介</h2>
+                <p>“乖巧软萌”的洛丽塔少女</p>
+                <p>外表与游历万千位面的资深冒险家难以联系</p>
+                <p>性格嚣张胆大，热衷于恶意戏弄周遭之人</p>
+                <p>向来自由无虑，不断奔赴对新位面的探索</p>
+            </div>
+        </section>
+
+        <!-- 角色档案 -->
+        <section class="info-box">
+            <h2>角色档案</h2>
+            <div class="info-list">
+                <div class="info-item">称号：醉欢弥新</div>
+                <div class="info-item">生日：6月17日夏</div>
+                <div class="info-item">所属：未知阵营</div>
+                <div class="info-item">武器：魔法杖</div>
+                <div class="info-item">性格：胜负欲极强烈，心胸狭窄之人</div>
+                <div class="info-item">爱好：吃喝玩乐，挑战未知</div>
+            </div>
+        </section>
+
+        <!-- 角色设定 -->
+        <section class="words">
+            <h2>补充设定</h2>
+            <em><div class="sentence">傲慢、嫉妒、懒惰、贪婪、暴食和色欲</div></em>
+            <div class="sentence"><b>印象</b> |  栀子花 春日青 柑橘果香调  欢愉</div>
+            <div class="sentence"><b>食欲</b> |  炸鸡 烧烤 薯片 芒果 杨枝甘露 </div>
+            <div class="sentence"><b>践行</b> |  捉弄众生、摆弄命运为消遣行乐</div>
+            <div class="sentence"><b>价值</b> |  自我欢乐至上，万物皆为过客</div>
+        </section>
     </div>
 
-    <!-- 多风格生日祝福文案 锚点：wish -->
-    <div class="section" id="wish">
-        <h2>亲友祝福</h2> 
-        <div class="wish-box" >
-            <div class="wish-item">
-                <strong>【生日快乐,很愧疚不知道你喜欢什么食物，只知道你稍微好感小草一些，但是】</strong><br>
-                <p class="signature">——魏爽&nbsp;&nbsp;&nbsp;</p>
-            </div>
-            <div class="wish-item">
-                <strong>【文艺诗意版】</strong><br>
-                时光辗转，又逢生辰。祝左超情生日快乐。三十一岁，一半烟火，一半诗意。愿你眼底有星光，心中有山海，不负岁月，不负自己，岁岁年年，自在从容。
-                 <p class="signature">——魏爽&nbsp;&nbsp;&nbsp;</p>
-            </div>
-            <div class="wish-item">
-                <strong>【简约大气版】</strong><br>
-                祝左超情生日快乐！三十一岁，新的起点，新的期许。愿平安常伴，好运相随，生活明朗，万事可期。
-                 <p class="signature">——魏爽&nbsp;&nbsp;&nbsp;</p>
-            </div>
-            <div class="wish-item">
-                <strong>【俏皮活泼版】</strong><br>
-                叮！按时长大～祝左超情31岁生日快乐！愿快乐围绕你，烦恼全跑掉，想吃的都吃到，想做的都成真，每天都元气满满！
-                 <p class="signature">——魏爽&nbsp;&nbsp;&nbsp;</p>
-            </div>
-            <div class="wish-item">
-                <strong>【走心深情版】</strong><br>
-                又一年7月27日，祝左超情生日快乐。走过三十一个春秋，愿你被世界温柔以待，身边皆是良人，心中永远保有热爱，余生漫长，皆有美好相伴。
-                 <p class="signature">——魏爽&nbsp;&nbsp;&nbsp;</p>
-            </div>
-            <div class="wish-item">
-                <strong>【励志期许版】</strong><br>
-                三十而立，风华正茂。祝左超情生日快乐！愿你在新的一岁里，乘风破浪，一往无前，活成自己最喜欢的模样，未来光芒万丈。
-                 <p class="signature">——魏爽&nbsp;&nbsp;&nbsp;</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 生日快乐歌（人声版） 锚点：music -->
-    <div class="section" id="music">
-        <h2>🎵 生日快乐歌🎵 </h2>
-        <div class="audio-box">
-            <!-- 内置带歌声正版生日快乐歌，支持播放/暂停 -->
-            <audio controls autoplay loop>
-                <source src="https://www.soundjay.com/misc/happy-birthday.mp3" type="audio/mpeg">
-            
-            <p style="margin-top:15px;color:#0055AA;">愿歌声伴随美好生辰，生日快乐！</p>
-        </div>
-    </div>
-
-    <!-- 底部 -->
-    <div class="footer">
-     祝 左超情 · 31岁生日快乐 | 2026年生日纪念页
-    </div>
+    <!-- 页脚 -->
+    <footer>
+        <p>版权所有 ©2026 Wanyo忘忧工作室 &nbsp;&nbsp;&nbsp|&nbsp;&nbsp;&nbsp联系我们:1773976915@qq.com
+        <P>此网页于2026.6.16制作完毕</P>
+    </footer>
 </body>
 </html>
